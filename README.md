@@ -13,3 +13,45 @@
 **弔图更优质,稗录略低级**
     这是一个梗图+表情等互联网有趣图片库,大约前1600张都是本人手敲命名,此后引入ai自动重命名+人工校正工作流,实现高效rename.
     接下来即将构建重排序/嵌入模型检索系统
+
+## 图片分拣
+
+脚本只处理 `sorting/` 根目录中的图片。每张图片通过一次视觉模型请求同时得到新名称和分类，随后进入以下目录之一：
+
+| 目录 | 判断标准 |
+| --- | --- |
+| `sorting/表情` | 适合在聊天中直接表达反应、情绪或动作 |
+| `sorting/史` | 聊天记录、帖子、长文本或依赖故事上下文的离谱内容 |
+| `sorting/梗图` | 内容短小集中，一个笑点即可理解 |
+| `sorting/其他` | 壁纸、插画、素材、普通照片或无法归入前三类 |
+
+进入子目录后脚本停止处理，由用户检查并手动搬入最终图库。脚本不递归扫描，也不保存历史记录。
+
+### 安装
+
+```powershell
+python -m pip install -r requirements.txt
+```
+
+设置一个提供商的 API Key：
+
+```powershell
+$env:QWEN_API_KEY="你的 API Key"
+# 或
+$env:AI_PROVIDER="siliconflow"
+$env:SILICONFLOW_API_KEY="你的 API Key"
+```
+
+可通过 `AI_MODEL` 覆盖默认模型。
+
+### 运行
+
+把图片放入 `sorting/` 根目录，然后在仓库根目录执行：
+
+```powershell
+python -m scripts.main
+```
+
+WebP 会先转换为 PNG；动画 WebP 转为 APNG 并保留帧数。转换、模型请求或移动失败的文件留在 `sorting/` 根目录，下次运行会再次处理。程序不会覆盖同名文件，而是追加 `_1`、`_2` 等后缀。
+
+真实 50 张抽样结果见 [验证报告](docs/validation/2026-08-23-sorting-sample.md)。
