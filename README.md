@@ -1,11 +1,11 @@
 
-**弔图更优质,稗录略低级**
-    这是一个梗图+表情等互联网有趣图片库,大约前1600张都是本人手敲命名,此后引入ai自动重命名+人工校正工作流,实现高效rename.
-    接下来即将构建重排序/嵌入模型检索系统
+**注：弔图更优质,“史”则接地气**
+
+    这是一个梗图+表情等互联网图片库,大约前1600张都是本人手敲命名,此后引入ai自动重命名+人工校正工作流,实现高效rename.
 
 ## 图片分拣
 
-脚本只处理 `sorting/` 根目录中的图片。每张图片通过一次视觉模型请求同时得到新名称和分类，随后进入以下目录之一：
+脚本较为简陋，只处理 `sorting/` 根目录中的图片。每张图片通过一次视觉模型请求同时得到新名称和分类，随后进入以下目录之一：
 
 | 目录 | 判断标准 |
 | --- | --- |
@@ -25,22 +25,14 @@ python -m pip install -r requirements.txt
 设置一个提供商的 API Key：
 
 ```powershell
-$env:QWEN_API_KEY="你的 API Key"
-# 或
-$env:AI_PROVIDER="siliconflow"
-$env:SILICONFLOW_API_KEY="你的 API Key"
+$env:AI_PROVIDER="你的 API Key"
 ```
-
-可通过 `AI_MODEL` 覆盖默认模型。
+ `AI_MODEL` 指定默认模型。
 
 ### 运行
 
 把图片放入 `sorting/` 根目录，然后在仓库根目录执行：
 
 ```powershell
-python -m scripts.main
+python -m scripts/main
 ```
-
-WebP 会先转换为 PNG；动画 WebP 转为 APNG 并保留帧数。转换、模型请求或移动失败的文件留在 `sorting/` 根目录，下次运行会再次处理。程序不会覆盖同名文件，而是追加 `_1`、`_2` 等后缀。
-
-真实 50 张抽样结果见 [验证报告](docs/validation/2026-08-23-sorting-sample.md)。
