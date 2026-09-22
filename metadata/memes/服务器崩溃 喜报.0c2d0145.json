@@ -1,0 +1,30 @@
+{
+  "id": "0c2d01453cdb27b6c03cc5359046901e",
+  "path": "images/服务器崩溃 喜报.0c2d0145.jpg",
+  "text": "喜庆海报把 Java 的 StackOverflowError 当成“喜报”隆重宣布，用巨大反差调侃程序出错或服务器崩溃。",
+  "tags": [
+    "喜报",
+    "服务器崩溃",
+    "Java",
+    "StackOverflowError",
+    "程序员梗",
+    "反讽"
+  ],
+  "character": [
+    "无人物"
+  ],
+  "emotion": [
+    "反讽",
+    "幸灾乐祸",
+    "崩溃"
+  ],
+  "usage": [
+    "调侃程序报错",
+    "吐槽服务器崩溃",
+    "程序员自嘲",
+    "反讽坏消息"
+  ],
+  "background": "“喜报”是一类用喜庆宣传海报包装坏消息的反讽梗；“java.lang.StackOverflowError”是 Java 程序调用栈溢出错误，常由无限递归或调用层级过深引发，严重时会导致服务异常或崩溃。",
+  "analyzed_at": "2026-09-15T08:59:12",
+  "analyzed_by": "gpt-5.6-sol"
+}

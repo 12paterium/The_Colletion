@@ -1,0 +1,29 @@
+{
+  "id": "67d178daf5015132ee1c23e13d244ee1",
+  "path": "images/claude思考中.67d178da.gif",
+  "text": "画面是 Claude 显示“Thinking（思考中）”的状态提示，用来表示正在认真处理问题，也可调侃一时没想好怎么回答。",
+  "tags": [
+    "Claude",
+    "Thinking",
+    "AI",
+    "思考中",
+    "加载中"
+  ],
+  "character": [
+    "Claude 橙色放射状标志"
+  ],
+  "emotion": [
+    "思考",
+    "等待",
+    "平静"
+  ],
+  "usage": [
+    "表示正在思考",
+    "回复前拖延",
+    "等待答案",
+    "调侃大脑加载中"
+  ],
+  "background": "出自 Anthropic 的 AI 助手 Claude 界面，“Thinking”表示模型正在处理问题或生成回答。",
+  "analyzed_at": "2026-09-14T23:27:20",
+  "analyzed_by": "gpt-5.6-sol"
+}

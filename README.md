@@ -38,3 +38,9 @@ $env:AI_PROVIDER="你的 API Key"
 ```powershell
 python -m scripts/main
 ```
+
+## metadata/
+
+[MemeVault](https://github.com/12paterium/MemeVault) 对本仓图片做过一次全量视觉解析，结果在 [`metadata/`](metadata/README.md)：
+一图一个 JSON（画面描述、标签、角色、情绪、用途、梗背景），可以照着那里的说明重建一个语义搜索表情包库。
+图片仍以本仓归档目录为准，`metadata/` 只存解析结果。
