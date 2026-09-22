@@ -87,3 +87,15 @@ meme-mcp --config ./mcp_config.json --transport streamable-http   # HTTP：远�
 ```
 
 之后 `meme_search` 检索、`meme_get` 取图即可。
+
+## 元数据的更新
+
+MemeVault 库里加了新图、或重刷了旧条目之后，把库目录的 `memes/*.json` 整体再拷过来覆盖一次即可
+（只同步 JSON，图片以本仓归档目录为准）：
+
+```bash
+cp -f /path/to/memes-vault/memes/*.json metadata/memes/
+```
+
+每个条目自带内容 md5，跟图片对不上时以 md5 为准；条目被删掉时记得把 `metadata/memes/` 里对应的
+JSON 也删掉。
